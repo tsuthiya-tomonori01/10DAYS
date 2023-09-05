@@ -7,16 +7,24 @@ const char kWindowTitle[] = "LE2D_14_ツチヤ_トモノリ";
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
-	int BlockPosX[4] = {640,640,640,640};
-	int BlockPosY[4] = {-200,-400,-600,-800};
-	int BlockRadius[4] = {50,50,50,50};
-	int Block_color[4] = {0,1,2,3};
+	int Block_PosX[4] = { 640, 640, 640, 640};
+	int Block_PosY[4] = {-200,-400,-600,-800};
+	int Block_Radius[4] = {50, 50,  50,  50};
+	int Block_color [4] = { 0,  1,   2,   3};
 
+	int Hit_Circle_PosX[2]   = {640,640};
+	int Hit_Circle_PosY[2]   = {200,500};
+	int Hit_Circle_Radius[2] = {60, 60};
 
+	int Box_Circle_PosX[4] = {};
+	int Box_Circle_PosY[4] = {};
+	int Box_Circle_Radius[4] = {};
 
-	int BlockSpeed = 5;
+	int Block_Speed = 3;
 
 	int Flame = 60;
+
+	int GameScene = 0;
 
 	// ライブラリの初期化
 	Novice::Initialize(kWindowTitle, 1280, 720);
@@ -38,17 +46,30 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		/// ↓更新処理ここから
 		///
 
+		switch (GameScene)
+		{
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		}
+		
 		Flame--;
-
 		for (int i = 0; i < 4; i++)
 		{
-			BlockPosY[i] += BlockSpeed;
+			Block_PosY[i] += Block_Speed;
 
-			if (BlockPosY[i] >= 700)
+			if (Block_PosY[i] >= 670)
 			{
 				if (Flame <= 0)
 				{
-					BlockPosY[i] = -200;
+					Block_PosY[i] = -350;
 					Block_color[i] = rand() % 4;
 					Flame = 60;
 				}
@@ -56,6 +77,23 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		}
 		
 
+		if (keys[DIK_RIGHT] && preKeys[DIK_RIGHT])
+		{
+			for (int i = 0; i < 4; i++)
+			{
+
+			}
+		}
+
+
+
+		if (keys[DIK_LEFT] && preKeys[DIK_LEFT])
+		{
+			for (int i = 0; i < 4; i++)
+			{
+
+			}
+		}
 
 
 		///
@@ -65,28 +103,37 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓描画処理ここから
 		///
+		
+		for (int h = 0; h < 2; h++)
+		{
+			Novice::DrawEllipse(Hit_Circle_PosX[h], Hit_Circle_PosY[h], Hit_Circle_Radius[h], Hit_Circle_Radius[h], 0.0f, WHITE, kFillModeSolid);
+
+			Novice::DrawEllipse(Hit_Circle_PosX[h], Hit_Circle_PosY[h], Hit_Circle_Radius[h], Hit_Circle_Radius[h], 0.0f, WHITE, kFillModeSolid);
+		}
+		
 		for (int i = 0; i < 4; i++)
 		{
 			if (Block_color[i] == 0)
 			{
-				Novice::DrawEllipse(BlockPosX[i], BlockPosY[i], BlockRadius[i], BlockRadius[i], 0.0f, RED, kFillModeSolid);
+				Novice::DrawEllipse(Block_PosX[i], Block_PosY[i], Block_Radius[i], Block_Radius[i], 0.0f, RED, kFillModeSolid);
 			}
 
 			if (Block_color[i] == 1)
 			{
-				Novice::DrawEllipse(BlockPosX[i], BlockPosY[i], BlockRadius[i], BlockRadius[i], 0.0f, BLUE, kFillModeSolid);
+				Novice::DrawEllipse(Block_PosX[i], Block_PosY[i], Block_Radius[i], Block_Radius[i], 0.0f, BLUE, kFillModeSolid);
 			}
 
 			if (Block_color[i] == 2)
 			{
-				Novice::DrawEllipse(BlockPosX[i], BlockPosY[i], BlockRadius[i], BlockRadius[i], 0.0f, GREEN, kFillModeSolid);
+				Novice::DrawEllipse(Block_PosX[i], Block_PosY[i], Block_Radius[i], Block_Radius[i], 0.0f, GREEN, kFillModeSolid);
 			}
 
 			if (Block_color[i] == 3)
 			{
-				Novice::DrawEllipse(BlockPosX[i], BlockPosY[i], BlockRadius[i], BlockRadius[i], 0.0f, BLACK, kFillModeSolid);
+				Novice::DrawEllipse(Block_PosX[i], Block_PosY[i], Block_Radius[i], Block_Radius[i], 0.0f, BLACK, kFillModeSolid);
 			}
 		}
+
 		///
 		/// ↑描画処理ここまで
 		///
