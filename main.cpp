@@ -13,9 +13,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	int Block_Radius[4] = { 50, 50,  50,  50 };
 	int Block_color[4] = { 0,  1,   2,   3 };
 
-	int Hit_Circle_PosX[2] = { 640,640 };
-	int Hit_Circle_PosY[2] = { 200,520 };
-	int Hit_Circle_Radius[2] = { 70, 70 };
+	int Hit_Circle_PosX[2]   = {640,640};
+	int Hit_Circle_PosY[2]   = {200,500};
+	int Hit_Circle_Radius[2] = {70, 70};
 
 	int Box_Circle_PosX[4] = {};
 	int Box_Circle_PosY[4] = {};
@@ -52,14 +52,19 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		switch (GameScene)
 		{
 		case 0:
+
 			break;
 		case 1:
+
 			break;
 		case 2:
+
 			break;
 		case 3:
+
 			break;
 		case 4:
+
 			break;
 		}
 
