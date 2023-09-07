@@ -144,7 +144,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			{
 				if (Block_color[i] == 0)
 				{
-					if (keys[DIK_UP] && preKeys[DIK_UP] == 0)
+					if (keys[DIK_LEFT] && preKeys[DIK_LEFT] == 0)
 					{
 						Novice::DrawEllipse(Block_strage_PosX[0], Block_strage_PosY[0], Block_Radius[i], Block_Radius[i], 0.0f, RED, kFillModeSolid);
 					}
@@ -152,7 +152,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 				if (Block_color[i] == 1)
 				{
-					if (keys[DIK_DOWN] && preKeys[DIK_DOWN] == 0)
+					if (keys[DIK_RIGHT] && preKeys[DIK_RIGHT] == 0)
 					{
 						Novice::DrawEllipse(Block_strage_PosX[1], Block_strage_PosY[1], Block_Radius[i], Block_Radius[i], 0.0f, BLUE, kFillModeSolid);
 					}
