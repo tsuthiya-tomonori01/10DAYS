@@ -13,6 +13,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	int Block_Radius[4] = { 50, 50,  50,  50 };
 	int Block_color[4] = { 0,  1,   2,   3 };
 
+	int Block_i_PosX[4] = { 640, 640, 640, 640 };
+	int Block_i_PosY[4] = { -200,-400,-600,-800 };
+	int Block_i_Radius[4] = { 50, 50,  50,  50 };
+	int Block_i_color[4] = { 0,  1,   2,   3 };
+
 	int Hit_Circle_PosX[2]   = {640,640};
 	int Hit_Circle_PosY[2]   = {200,500};
 	int Hit_Circle_Radius[2] = {70, 70};
