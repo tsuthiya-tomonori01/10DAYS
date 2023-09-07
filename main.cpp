@@ -13,10 +13,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	int Block_Radius[4] = { 50, 50,  50,  50 };
 	int Block_color[4] = { 0,  1,   2,   3 };
 
-	int Block_strage_PosX[4] = { 200, 1080, 200, 1080 };
+	/*int Block_strage_PosX[4] = { 200, 1080, 200, 1080 };
 	int Block_strage_PosY[4] = { 200, 200, 520, 520 };
 	int Block_strage_Radius[4] = { 50, 50, 50, 50 };
-	int Block_strage_color[4] = { 0,  1,   2,   3 };
+	int Block_strage_color[4] = { 0,  1,   2,   3 };*/
 
 	int Hit_Circle_PosX[2] = { 640,640 };
 	int Hit_Circle_PosY[2] = { 200,520 };
@@ -29,6 +29,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	int Block_Speed = 2;
 
 	int Frame = 0;
+
+	int DeleteFrame = 30;
 
 	int GameScene = 0;
 
@@ -100,6 +102,99 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 				Block_PosY[i] = -150;
 				Block_color[i] = rand() % 4;
 			}
+
+			if (Block_PosX[i] == 200 && Block_PosY[i] == 200 && Block_color[i] == 0)
+			{
+				DeleteFrame--;
+				if (DeleteFrame <= 0)
+				{
+					Block_PosX[i] =  640;
+					Block_PosY[i] = -100;
+					Block_color[i] = rand() % 4;
+					DeleteFrame = 30;
+				}
+			}
+
+			if (Block_PosX[i] == 1080 && Block_PosY[i] == 200 && Block_color[i] == 1)
+			{
+				DeleteFrame--;
+				if (DeleteFrame <= 0)
+				{
+					Block_PosX[i] =  640;
+					Block_PosY[i] = -350;
+					Block_color[i] = rand() % 4;
+					DeleteFrame = 30;
+				}
+			}
+
+			if (Block_PosX[i] == 200 && Block_PosY[i] == 520 && Block_color[i] == 2)
+			{
+				DeleteFrame--;
+				if (DeleteFrame <= 0)
+				{
+					Block_PosX[i] =  640;
+					Block_PosY[i] = -600;
+					Block_color[i] = rand() % 4;
+					DeleteFrame = 30;
+				}
+			}
+
+			if (Block_PosX[i] == 1080 && Block_PosY[i] == 520 && Block_color[i] == 3)
+			{
+				DeleteFrame--;
+				if (DeleteFrame <= 0)
+				{
+					Block_PosX[i] =  640;
+					Block_PosY[i] = -800;
+					Block_color[i] = rand() % 4;
+					DeleteFrame = 30;
+				}
+			}
+
+			if (170 <= Block_PosY[i] && Block_PosY[i] <= 230)
+			{
+				if (Block_color[i] == 0)
+				{
+					if (keys[DIK_LEFT] && preKeys[DIK_LEFT] == 0)
+					{
+						Block_PosX[i] = 200;
+						Block_PosY[i] = 200;
+					}
+				}
+
+				if (Block_color[i] == 1)
+				{
+					if (keys[DIK_RIGHT] && preKeys[DIK_RIGHT] == 0)
+					{
+						Block_PosX[i] = 1080;
+						Block_PosY[i] = 200;
+					}
+				}
+			}
+
+			if (490 <= Block_PosY[i] && Block_PosY[i] <= 550)
+			{
+				if (Block_color[i] == 2)
+				{
+					if (keys[DIK_LEFT] && preKeys[DIK_LEFT] == 0)
+					{
+						Block_PosX[i] = 200;
+						Block_PosY[i] = 520;
+					}
+				}
+
+				if (Block_color[i] == 3)
+				{
+					if (keys[DIK_RIGHT] && preKeys[DIK_RIGHT] == 0)
+					{
+						Block_PosX[i] = 1080;
+						Block_PosY[i] = 520;
+					}
+				}
+			}
+
+
+
 		}
 
 
@@ -140,7 +235,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 				Novice::DrawEllipse(Block_PosX[i], Block_PosY[i], Block_Radius[i], Block_Radius[i], 0.0f, BLACK, kFillModeSolid);
 			}
 
-			if (170 <= Block_PosY[i] && Block_PosY[i] <= 230)
+			/*if (170 <= Block_PosY[i] && Block_PosY[i] <= 230)
 			{
 				if (Block_color[i] == 0)
 				{
@@ -176,7 +271,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 						Novice::DrawEllipse(Block_strage_PosX[3], Block_strage_PosY[3], Block_Radius[i], Block_Radius[i], 0.0f, BLACK, kFillModeSolid);
 					}
 				}
-			}
+			}*/
 		}
 
 		///
