@@ -26,6 +26,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	int Box_Circle_PosY[4] = {};
 	int Box_Circle_Radius[4] = {};
 
+	bool Block_Flag_1 = false;
+	bool Block_Flag_2 = false;
+	bool Block_Flag_3 = false;
+	bool Block_Flag_4 = false;
+
+
+
 	int Block_Speed = 2;
 
 	int Frame = 0;
@@ -159,6 +166,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 					{
 						Block_PosX[i] = 200;
 						Block_PosY[i] = 200;
+
 					}
 				}
 
