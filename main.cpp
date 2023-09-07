@@ -14,13 +14,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	int Hit_Circle_PosX[2]   = {640,640};
 	int Hit_Circle_PosY[2]   = {200,500};
-	int Hit_Circle_Radius[2] = {60, 60};
+	int Hit_Circle_Radius[2] = {70, 70};
 
 	int Box_Circle_PosX[4] = {};
 	int Box_Circle_PosY[4] = {};
 	int Box_Circle_Radius[4] = {};
 
-	int Block_Speed = 3;
+	int Block_Speed = 4;
 
 	int Flame = 60;
 
@@ -77,23 +77,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		}
 		
 
-		if (keys[DIK_RIGHT] && preKeys[DIK_RIGHT])
-		{
-			for (int i = 0; i < 4; i++)
-			{
-
-			}
-		}
-
-
-
-		if (keys[DIK_LEFT] && preKeys[DIK_LEFT])
-		{
-			for (int i = 0; i < 4; i++)
-			{
-
-			}
-		}
 
 
 		///
